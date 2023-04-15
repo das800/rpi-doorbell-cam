@@ -1,0 +1,14 @@
+[Unit]
+Description=My service
+After=network.target
+
+[Service]
+ExecStart=/home/pi/envs/security-pi-cam/bin/python3 picam-webstream.py
+WorkingDirectory=/home/pi/security-cam
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
